@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+
+    /* This is navigation bar */
+
+header{
+    height: 100vh;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
+header nav ul{
+    display: flex;
+    list-style-type: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.4s;
+
+    &:hover{
+        color: rgb(208, 28, 40);
+    }
+}
+header nav .login{
+    all: unset;
+    background-color: rgb(208, 28, 40);
+    color: white;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        background: transparent;
+        border: 1px solid rgb(208, 28, 40);
+        color: rgb(208, 28, 40);
+    }
+}
+
+    /* This is Hero Section */
+
+.hero_section_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.5rem;
+}
+.hero_section_container .hero_section_content h1,
+.hero_section_container .hero_section_content p,
+.hero_section_container .hero_section_content .call_to_action,
+.hero_section_container .hero_section_content .category,
+.hero_section_container .hero_section_image{
+    transform: translateX(-10px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s 1 forwards;
+}
+@keyframes showContent {
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(-15px);
+    }
+}
+.hero_section_container .hero_section_content h1{
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 6.3rem;
+    width: 100%;
+}
+.hero_section_container .hero_section_content h1 span{
+    color: rgb(208, 28, 40);
+    transform: translateX(-50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showText  2s  infinite;
+}
+@keyframes showText {
+    to{
+        filter: blur(0);
+        opacity: 1;
+        transform: translateY(50px);
+    }
+}
+.hero_section_container .hero_section_content p{
+    text-transform: uppercase;
+    margin: 2rem 0;
+    color: rgb(90, 89, 89);
+    font-weight: 600;
+    line-height: 1.5rem;
+    width: 70%;
+}
+.hero_section_container .hero_section_content .call_to_action{
+    all: unset;
+    background-color: rgb(208, 28, 40);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.3rem 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        background: transparent;
+        border: 1px solid rgb(208, 28, 40);
+        color: rgb(208, 28, 40);
+    }
+}
+.hero_section_container .hero_section_content .category{
+    all: unset;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(90, 89, 89);
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: rgb(208, 28, 40);
+        color: white;
+        border: none;
+    }
+}
+.hero_section_container .hero_section_content h6{
+    padding: 2rem 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: rgb(90, 89, 89);
+}
+.hero_section_container .hero_section_content .icons img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    transition: 0.3s;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+.hero_section_container .hero_section_image{
+    width: 33rem;
+    height: 30rem;
+    padding-top: 2rem;
+    animation-delay: 0.3s;
+}
+
+    /* This is Responsiveness section */
+
+@media only screen and (max-width:1280px) {
+    .hero_section_container .hero_section_content h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+    .hero_section_container .hero_section_content p {
+        margin: 0.5rem 0;
+    }
+    .hero_section_container .hero_section_content h6 {
+        padding: 1rem 0;
+    }
+}
+@media only screen and (max-width:1024px) {
+    .hero_section_container .hero_section_content h1 {
+        font-size: 3.8rem;
+        line-height: 4rem;
+    }
+    .hero_section_container .hero_section_content p {
+        margin: 0.5rem 0;
+    }
+    .hero_section_container .hero_section_content h6 {
+        padding: 1rem 0;
+    }
+}
+@media only screen and (max-width:768px) {
+    .hero_section_container .hero_section_content h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 100%;
+    }
+    .hero_section_container .hero_section_content p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+    .hero_section_container .hero_section_image {
+        width: 25rem;
+        height: 22rem;
+        margin-top: -2rem;
+        margin-right: -3rem;
+    }
+    .hero_section_container .hero_section_content .call_to_action {
+        font-size: 0.9rem;
+        padding: 0.2rem 0.6rem;
+        margin-right: 1rem;
+    }
+    .hero_section_container .hero_section_content .category {
+        font-size: 0.9rem;
+        padding: 0.2rem 0.6rem;
+        margin-right: 1rem;
+    }
+    .hero_section_container .hero_section_content .icons img {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    header {
+        max-width: 100vw;
+        margin: 1rem;
+    }
+    .hero_section_container .hero_section_content h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .hero_section_container .hero_section_content p {
+        margin: 0.2rem 0;
+        line-height: 1.5rem;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .hero_section_container .hero_section_image {
+        width: 18rem;
+        height: 20rem;
+        padding-top: 0;
+        animation-delay: 0.3s;
+    }
+    .hero_section_container .hero_section_content .call_to_action {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+        margin-right: 1rem;
+    }
+    .hero_section_container .hero_section_content .category {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    .hero_section_container .hero_section_content h6 {
+        padding: 0.5rem 0;
+        font-size: 0.7rem;
+    }
+    .hero_section_container .hero_section_content .icons img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0,5rem;
+        transition: 0.3s;
+    }
+}
+
+
